@@ -1,4 +1,6 @@
 .idea/
+.ipynb_checkpoints/
 *.pyc
-.aux
-.log
+*.aux
+*.log
+
