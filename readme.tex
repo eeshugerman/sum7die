@@ -3,6 +3,8 @@
 \usepackage{changepage}
 \usepackage{amssymb,mathtools}
 \usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{float}
 
 \setlength{\parindent}{0pt}
 
@@ -122,6 +124,15 @@ domain: $n \vert T < n < T + 64$
 			
 		 \end{cases}
 \]
+
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=.3]{diagram.jpg}
+  \caption{Possible games paths as a DAG, motivating the algorithms above. Here, [n] denotes the number of paths to a sum n, and the die is a two-sided die (a coin?) yielding either 2 or 3.}
+\end{figure}
+
 
 \end{document}
 
