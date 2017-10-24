@@ -96,11 +96,14 @@ Note: The algorithms below merely count the number of paths to a number n. Howev
 
 \subsubsection{region b}
 
+
+\textbf{TODO: double check against code}
 \[
 	[n] = \sum_{i=0}^{\vert L \vert}
 		\begin{cases}
-			[n - L_i]	& \text{if $n - L_i > 0$} \\
-			1		& \text{if $n - L_i = 0$} \\
+			[n - L_i]	& \text{if $T > n - L_i > n_c$} \\
+			[n - H_i]	& \text{else if $n - H_i > 0$} \\
+			1		& \text{if $n - H_i = 0$} \\
 			0		& \text{if $n - L_i < 0$}
 		 \end{cases}
 \]
