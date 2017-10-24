@@ -17,7 +17,7 @@ Thus, there are three regions, each with their own rules for choosing paths:
 
 
 
-<img src="https://rawgit.com/eeshugerman/sum7die/None/svgs/6ef6232f98cea5faa9ac83829cfea318.svg?invert_in_darkmode" align=middle width=65.259975pt height=24.56552999999997pt/>
+<img src="https://github.com/eeshugerman/sum7die/blob/master/svgs/6ef6232f98cea5faa9ac83829cfea318.svg?invert_in_darkmode" align=middle width=65.259975pt height=24.56552999999997pt/>
 
 <img src="https://rawgit.com/eeshugerman/sum7die/None/svgs/138644dfd1adcf3497eaa74a981ebaa8.svg?invert_in_darkmode" align=middle width=67.296735pt height=24.56552999999997pt/>
 
