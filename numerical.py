@@ -8,9 +8,7 @@ class DieGame:
         self.W = W
         self.crit_point = threshold - W + 1
 
-        sides, sides_low, sides_high, sides_all = [
-            list(sides).copy() for i in range(4)
-        ]
+        sides, sides_low, sides_high, sides_all = [list(sides) for i in range(4)]
         self.sides_null = tuple(sides)
         sides_low.insert(0, 1)
         self.sides_low = tuple(sides_low)
@@ -27,9 +25,7 @@ class DieGame:
         def main():
 
             known = {}
-            sub_thresh = [
-                count_paths(i, known) for i in range(0, self.threshold + 1)
-                ]
+            sub_thresh = [count_paths(i, known) for i in range(0, self.threshold + 1)]
 
             end_points = range(
                 self.threshold + 1,
@@ -66,7 +62,7 @@ class DieGame:
             elif n <= self.threshold:
                 sides = self.sides_all    # (1, 11, 2, ..., 64)
             else:
-                sides = (); print('ERROR: invalid n'); quit()
+                raise ValueError('invalid n')
 
             for s in sides:
                 prec = n - s
@@ -85,8 +81,7 @@ class DieGame:
 
         def count_paths_end(n, sub_thresh_data):
             """
-            Calculate paths count vs steps distribution for n > threshold.
-            See readme.
+            Calculate paths count vs steps distribution for n > threshold. See readme.
             """
 
             paths_vs_steps = {}
@@ -112,14 +107,9 @@ class DieGame:
     def apply_prob(distr, num_choices):
         """
         Accepts num paths (existing) vs num steps, returns num paths (taken)
-        vs num steps. Shorter paths are more likely to be traversed. See docs.
+        vs num steps. Shorter paths are more likely to be traversed. See readme.
         """
         x, y = distr
-
-        ## debugging ##
-        # denom = np.power(num_choices, x)
-        # if np.any(denom < 0):
-        #     print('denom')
 
         # y = y / np.power(num_choices, x)
         y = y * np.power(float(num_choices), np.negative(x))
@@ -129,8 +119,7 @@ class DieGame:
     @staticmethod
     def sum_paths(distr):
         """
-        Accepts num paths (taken) vs num steps, returns total number of paths
-        (taken).
+        Accepts num paths (taken) vs num steps, returns total number of paths (taken).
         """
         x, y = distr
 
@@ -147,8 +136,6 @@ class DieGame:
         scores = np.arange(max(self.sides_high)) + 1
         paths = np.array(score_data)
 
-        if np.any(paths < 0):
-            print("ERROR 152")
         return (scores, paths)
 
 
